@@ -15,8 +15,7 @@ const useScrollToBottom = (
     }
 
     chatEndRef.scrollIntoView({ behavior: 'smooth' });
-
-  }, [chatArray]);
+  }, [chatEndRef, chatArray]);
 };
 
 export default useScrollToBottom;

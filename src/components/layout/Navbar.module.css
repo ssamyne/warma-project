@@ -8,6 +8,7 @@
     color: white;
     overflow: hidden;
     padding: 10px 50px;
+    box-shadow: rgba(0, 0, 0, 0.589) 0px 3px 8px;
 }
 
 .navBrand {

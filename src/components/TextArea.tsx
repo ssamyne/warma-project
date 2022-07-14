@@ -15,6 +15,7 @@ const TextArea: React.FC<Props> = ({ onChange, textAreaRef, textInput }) => {
         ref={textAreaRef}
         rows={1}
         value={textInput}
+        maxLength={500}
       />
     </div>
   );

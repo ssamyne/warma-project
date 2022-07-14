@@ -3,7 +3,9 @@ import classes from './Footer.module.css';
 const Footer = () => {
   return (
     <div className={classes.footer}>
-      <p>Ⓒ 2022 Klitsana C.</p>
+      <p>
+        Design and Develop by <span>Klitsana C.</span>
+      </p>
     </div>
   );
 };

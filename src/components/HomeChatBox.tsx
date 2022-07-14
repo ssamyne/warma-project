@@ -1,7 +1,4 @@
 import React from 'react';
-
-import classes from '../pages/Home.module.css';
-
 interface ChatBox {
   box: string;
   content: string;

@@ -16,6 +16,7 @@ const Home = React.memo(() => {
   const chatEndRef = useRef<HTMLDivElement>(null);
   const [textInput, setTextInput] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const [showEmpty, setShowEmpty] = useState(false);
 
   const { sendRequest, status } = useHttp(addContext);
 
@@ -57,23 +58,34 @@ const Home = React.memo(() => {
       ]);
       setTextInput('');
     }
-  }, [status]);
+  }, [status, setChatArray]);
+
+  const inValidInput = textInput.trim() === '';
 
   const onSendHandler = () => {
-    if (textInput.trim() === '') {
+    if (inValidInput) {
       setChatArray([
         ...chatArray,
         { box: classes.boxLeft, content: 'Hey!!, Type something!!' },
       ]);
+
+      setShowEmpty(true);
       return;
     }
 
+    setShowEmpty(false);
     sendRequest(textInput);
   };
 
   return (
     <div className={classes.homeMain}>
-      <div className={classes.background}></div>
+      <div className={classes.background}>
+        {showEmpty && (
+          <div className={classes.boxRight}>
+            <h1>... Empty?</h1>
+          </div>
+        )}
+      </div>
       <div className={classes.mainContent}>
         <div className={classes.chatBox}>
           {chatArray.map((chat, index) => {
@@ -82,21 +94,21 @@ const Home = React.memo(() => {
             );
           })}
           <div ref={chatEndRef}></div>
+          <div className={classes.toShare}>
+            <TextArea
+              onChange={onChangeHandler}
+              textAreaRef={textAreaRef}
+              textInput={textInput}
+            />
+            <Button
+              onClick={onSendHandler}
+              variant='contained'
+              endIcon={<SendIcon />}
+            >
+              Send
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className={classes.toShare}>
-        <TextArea
-          onChange={onChangeHandler}
-          textAreaRef={textAreaRef}
-          textInput={textInput}
-        />
-        <Button
-          onClick={onSendHandler}
-          variant='contained'
-          endIcon={<SendIcon />}
-        >
-          Send
-        </Button>
       </div>
     </div>
   );
