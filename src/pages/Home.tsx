@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import useScrollToBottom from '../hooks/useScrollToBottom';
 import useAutosizeTextArea from '../hooks/useAutoSizeTextArea';
-import useHttp from '../hooks/useHttp';
+import useHttp, { defaultStatus } from '../hooks/useHttp';
 import { addContext } from '../lib/api';
 import HOME_DEFAULT_CHAT from '../components/HOME_DEFAULT_CHAT';
 
@@ -29,14 +29,14 @@ const Home = React.memo(() => {
   };
 
   useEffect(() => {
-    if (status === 'pending') {
+    if (status === defaultStatus.pending) {
       setChatArray([
         ...chatArray,
         { box: classes.boxRight, content: textInput },
       ]);
     }
 
-    if (status === 'error') {
+    if (status === defaultStatus.error) {
       setChatArray([
         ...chatArray,
         {
@@ -47,7 +47,7 @@ const Home = React.memo(() => {
       ]);
     }
 
-    if (status === 'completed') {
+    if (status === defaultStatus.completed) {
       setChatArray([
         ...chatArray,
         {

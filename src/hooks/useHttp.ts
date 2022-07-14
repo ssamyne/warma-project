@@ -12,12 +12,18 @@ interface Action {
   errorMessage: string | null;
 }
 
+export const defaultStatus = {
+  pending: 'pending',
+  error: 'error',
+  completed: 'completed',
+};
+
 const httpReducer: Reducer<State, Action> = (state, action) => {
   if (action.type === 'SEND') {
     return {
       data: null,
       error: null,
-      status: 'pending',
+      status: defaultStatus.pending,
     };
   }
 
@@ -25,7 +31,7 @@ const httpReducer: Reducer<State, Action> = (state, action) => {
     return {
       data: action.responseData,
       error: null,
-      status: 'completed',
+      status: defaultStatus.completed,
     };
   }
 
@@ -33,7 +39,7 @@ const httpReducer: Reducer<State, Action> = (state, action) => {
     return {
       data: null,
       error: action.errorMessage,
-      status: 'error',
+      status: defaultStatus.error,
     };
   }
 
