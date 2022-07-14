@@ -1,0 +1,18 @@
+.divText {
+    display: flex;
+    width: 80%;
+    margin: 0;
+}
+
+.divText textarea {
+    font-size: 1.25rem;
+    display: block;
+    width: 100%;
+    margin: 15px 25px;
+    padding: 5px 20px;
+    height: 24px;
+    border-radius: 20px;
+    resize: none;
+    max-height: 635px;
+    overflow-y: auto;
+}
