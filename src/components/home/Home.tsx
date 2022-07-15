@@ -4,13 +4,14 @@ import useAutosizeTextArea from '../../hooks/useAutoSizeTextArea';
 import useHttp, { defaultStatus } from '../../hooks/useHttp';
 import { addContext } from '../../lib/api';
 import HOME_DEFAULT_CHAT from './HOME_DEFAULT_CHAT';
+import REPLY_TEXT from './REPLY_TEXT';
 
 import classes from './Home.module.css';
 import TextArea from './TextArea';
 import { Button } from '@mui/material';
 import { Send as SendIcon } from '@mui/icons-material';
 import HomeChatBox from './HomeChatBox';
-import Footer from '../layout/Footer';
+import Contact from './Contact';
 
 const Home = React.memo(() => {
   const [chatArray, setChatArray] = useState(HOME_DEFAULT_CHAT);
@@ -28,11 +29,6 @@ const Home = React.memo(() => {
     const input = event.target?.value;
 
     setTextInput(input);
-  };
-
-  const footerHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const button = event.currentTarget.id;
-    console.log(button);
   };
 
   useEffect(() => {
@@ -66,13 +62,15 @@ const Home = React.memo(() => {
     }
   }, [status, setChatArray]);
 
-  const inValidInput = textInput.trim() === '';
-
   const onSendHandler = () => {
+    const inValidInput = textInput.trim() === '';
+
     if (inValidInput) {
+      const index = Math.floor(Math.random() * 3);
+
       setChatArray([
         ...chatArray,
-        { box: classes.boxLeft, content: 'Hey!!, Type something!!' },
+        { box: classes.boxLeft, content: REPLY_TEXT[index] },
       ]);
 
       setShowEmpty(true);
@@ -91,6 +89,7 @@ const Home = React.memo(() => {
             <h1>Hm ... Empty?</h1>
           </div>
         )}
+        <Contact />
       </div>
       <div className={classes.mainContent}>
         <div className={classes.chatBox}>
@@ -113,9 +112,6 @@ const Home = React.memo(() => {
             >
               Send
             </Button>
-          </div>
-          <div className={classes.footer}>
-            <Footer onClick={footerHandler} />
           </div>
         </div>
       </div>
