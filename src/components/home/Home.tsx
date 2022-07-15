@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import useScrollToBottom from '../hooks/useScrollToBottom';
-import useAutosizeTextArea from '../hooks/useAutoSizeTextArea';
-import useHttp, { defaultStatus } from '../hooks/useHttp';
-import { addContext } from '../lib/api';
-import HOME_DEFAULT_CHAT from '../components/HOME_DEFAULT_CHAT';
+import useScrollToBottom from '../../hooks/useScrollToBottom';
+import useAutosizeTextArea from '../../hooks/useAutoSizeTextArea';
+import useHttp, { defaultStatus } from '../../hooks/useHttp';
+import { addContext } from '../../lib/api';
+import HOME_DEFAULT_CHAT from './HOME_DEFAULT_CHAT';
 
 import classes from './Home.module.css';
-import TextArea from '../components/TextArea';
+import TextArea from './TextArea';
 import { Button } from '@mui/material';
 import { Send as SendIcon } from '@mui/icons-material';
-import HomeChatBox from '../components/HomeChatBox';
+import HomeChatBox from './HomeChatBox';
 
 const Home = React.memo(() => {
   const [chatArray, setChatArray] = useState(HOME_DEFAULT_CHAT);

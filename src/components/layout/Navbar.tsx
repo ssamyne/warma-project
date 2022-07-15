@@ -9,7 +9,7 @@ const Navbar = React.memo(() => {
         <NavLink to='/'>Warma</NavLink>
       </div>
       <div className={classes.navList}>
-        <NavLink
+        {/* <NavLink
           className={({ isActive }) => {
             return isActive ? classes.active : undefined;
           }}
@@ -24,7 +24,7 @@ const Navbar = React.memo(() => {
           to='/contact-me'
         >
           contact me
-        </NavLink>
+        </NavLink> */}
       </div>
       <div className={classes.navLang}>
         <button>EN/TH</button>

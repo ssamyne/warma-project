@@ -1,4 +1,4 @@
-import classes from '../pages/Home.module.css';
+import classes from './Home.module.css';
 
 const HOME_DEFAULT_CHAT = [
   { box: classes.boxLeft, content: 'Hello!!' },

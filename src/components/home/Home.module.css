@@ -35,7 +35,7 @@
     color: white;
     width: 40%;
     top: 60px;
-    bottom: 0;
+    bottom: 76px;
     margin: 0;
     padding: 0 0 40px;
     overflow-y: auto;
@@ -44,7 +44,7 @@
 .chatBox {
     position: relative;
     text-align: left;
-    padding-bottom: 100px;
+    padding-bottom: 0;
 }
 
 .mainContent h1 {
@@ -115,7 +115,7 @@
     width: 40%;
     margin: 0;
     padding: 5px 0;
-    bottom: 40px;
+    bottom: 0;
     box-shadow: 0px -4px 6px 0px rgba(79, 79, 79, 0.45);
 }
 
@@ -172,7 +172,7 @@
     .mainContent {
         width: 100%;
         padding-top: 20px;
-        padding-bottom: 0;
+        padding-bottom: 110px;
         background-color: rgba(255, 255, 255, 0);
     }
 
@@ -183,6 +183,6 @@
 
     .toShare {
         width: 100%;
-        bottom: 0;
+        bottom: 76px;
     }
 }
