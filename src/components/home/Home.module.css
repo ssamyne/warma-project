@@ -183,3 +183,13 @@
         width: 100%;
     }
 }
+
+@media (max-width: 414px) {
+    .background {
+        z-index: -1;
+    }
+
+    .toShare {
+        width: fit-content;
+    }
+}

@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
 
 .navBar {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
     background-color: #4e4e4e;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     color: white;
     overflow: hidden;
-    padding: 10px 50px;
+    padding: 0;
     box-shadow: rgba(0, 0, 0, 0.589) 0px 3px 8px;
 }
 
 .navBrand {
     display: block;
-    margin: auto 0;
+    margin: 9px 0;
     font-size: 1.75rem;
     font-weight: 700;  
 }
@@ -21,7 +25,7 @@
 .navBrand a {
     text-decoration: none;
     font-family: 'Reem Kufi', sans-serif;
-    margin-right: 20px;
+    padding: 0 20px;
 
     background:
         conic-gradient(from -135deg, #000 0 90deg, #fff 0),
@@ -71,7 +75,7 @@
 }
 
 .navLang {
-    display: inline-block;
+    display: block;
     margin-left: auto;
 }
 
@@ -83,8 +87,8 @@
     text-decoration: none;
     background-color: transparent;
     border: none;
-    margin: auto 20px;
-    padding: 0;
+    margin: auto 0;
+    padding: 0 20px;
 
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -108,12 +112,14 @@
         font-size: 2.5rem;
     }
 
-    .navBrand a {
-        height: auto;
-    }
-
     .navList {
         font-size: 2rem;
     }
+}
 
+@media (max-width: 414px) {
+    .navBar {
+        position: unset;
+        width: 100%;
+    }
 }

@@ -8,24 +8,6 @@ const Navbar = React.memo(() => {
       <div className={classes.navBrand}>
         <NavLink to='/'>Warma</NavLink>
       </div>
-      <div className={classes.navList}>
-        {/* <NavLink
-          className={({ isActive }) => {
-            return isActive ? classes.active : undefined;
-          }}
-          to='/about-me'
-        >
-          about me
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => {
-            return isActive ? classes.active : undefined;
-          }}
-          to='/contact-me'
-        >
-          contact me
-        </NavLink> */}
-      </div>
       <div className={classes.navLang}>
         <button>EN/TH</button>
       </div>
