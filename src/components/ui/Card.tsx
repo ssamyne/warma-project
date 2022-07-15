@@ -10,9 +10,6 @@ const Card: React.FC<{ children: JSX.Element }> = React.memo((props) => {
         <Navbar />
       </header>
       <div className={classes.main}>{props.children}</div>
-      <footer className={classes.footer}>
-        <Footer />
-      </footer>
     </div>
   );
 });

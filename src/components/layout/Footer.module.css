@@ -7,8 +7,41 @@
 }
 
 .footerHalf {
-    display: block;
+    display: flex;
     color: #fff;
     width: 50%;
-    margin: auto 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.footerHalf button {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: #383838;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    width: 100%;
+    border: none;
+
+    --s: 0.2em;   /* the thickness of the line */
+    --c: #ffffff; /* the color */
+    
+    color: #0000;
+    padding-bottom: var(--s);
+    background: 
+      linear-gradient(90deg,var(--c) 50%,rgb(255, 255, 255) 0) calc(100% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 0.5s;
+}
+
+.footerHalf button:hover,
+.footerHalf button:active,
+.footerHalf button:focus {
+    cursor: pointer;
+    --_p: 100%;
 }

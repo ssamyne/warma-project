@@ -10,6 +10,7 @@ import TextArea from './TextArea';
 import { Button } from '@mui/material';
 import { Send as SendIcon } from '@mui/icons-material';
 import HomeChatBox from './HomeChatBox';
+import Footer from '../layout/Footer';
 
 const Home = React.memo(() => {
   const [chatArray, setChatArray] = useState(HOME_DEFAULT_CHAT);
@@ -27,6 +28,11 @@ const Home = React.memo(() => {
     const input = event.target?.value;
 
     setTextInput(input);
+  };
+
+  const footerHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const button = event.currentTarget.id;
+    console.log(button);
   };
 
   useEffect(() => {
@@ -82,7 +88,7 @@ const Home = React.memo(() => {
       <div className={classes.background}>
         {showEmpty && (
           <div className={classes.boxRight}>
-            <h1>... Empty?</h1>
+            <h1>Hm ... Empty?</h1>
           </div>
         )}
       </div>
@@ -107,6 +113,9 @@ const Home = React.memo(() => {
             >
               Send
             </Button>
+          </div>
+          <div className={classes.footer}>
+            <Footer onClick={footerHandler} />
           </div>
         </div>
       </div>

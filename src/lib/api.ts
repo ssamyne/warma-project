@@ -18,26 +18,3 @@ export const addContext = async (context: string) => {
 
   return null;
 };
-
-export async function getAllContext() {
-  const response = await fetch(FIREBASE_DOMAIN);
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || 'Could not get context.');
-  }
-
-  const transformedContexts = [];
-
-  for (const key in data) {
-    const contextObj = {
-      id: key,
-      ...data[key],
-    };
-
-    transformedContexts.push(contextObj);
-  }
-
-  return transformedContexts;
-}

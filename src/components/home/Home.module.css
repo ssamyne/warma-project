@@ -133,6 +133,14 @@
     background-color: #dbdbdb;
 }
 
+.footer {
+    width: 60%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;  
+}
+
 @keyframes openChat {
     0% {        
         opacity: 0;
@@ -142,21 +150,6 @@
         opacity: 1;
         transform: translateY(0%);
     }
-}
-
-@keyframes hoverLink {
-    0% {        
-        transform: translateX(20%);
-    }
-    100% {        
-        transform: translateY(0%);
-    }
-}
-
-@keyframes bounce {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-3px); }
-    100% { transform: translateY(0); }
 }
 
 @media (max-width: 820px) {
@@ -184,5 +177,9 @@
     .toShare {
         width: 100%;
         bottom: 76px;
+    }
+
+    .footer {
+        width: 100%;
     }
 }

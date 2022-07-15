@@ -1,20 +1,23 @@
-import classes from './Footer.module.css';
-import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import React from 'react';
 
-const Footer = () => {
+import classes from './Footer.module.css';
+
+interface Props {
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const Footer: React.FC<Props> = ({ onClick }) => {
   return (
     <div className={classes.footer}>
       <div className={classes.footerHalf}>
-        <h5>My Contact</h5>
-        <div className={classes.phone}>
-          <p></p>
-        </div>
-        <div className={classes.mail}></div>
+        <button id='contact' onClick={onClick}>
+          My Contact
+        </button>
       </div>
       <div className={classes.footerHalf}>
-        <h5>About Website</h5>
-        <div className={classes.aboutContent}></div>
-        <div className={classes.social}></div>
+        <button id='about' onClick={onClick}>
+          About Warma
+        </button>
       </div>
     </div>
   );
