@@ -92,27 +92,25 @@ const Home = React.memo(() => {
         <Contact />
       </div>
       <div className={classes.mainContent}>
-        <div className={classes.chatBox}>
-          {chatArray.map((chat, index) => {
-            return (
-              <HomeChatBox key={index} box={chat.box} content={chat.content} />
-            );
-          })}
-          <div ref={chatEndRef}></div>
-          <div className={classes.toShare}>
-            <TextArea
-              onChange={onChangeHandler}
-              textAreaRef={textAreaRef}
-              textInput={textInput}
-            />
-            <Button
-              onClick={onSendHandler}
-              variant='contained'
-              endIcon={<SendIcon />}
-            >
-              Send
-            </Button>
-          </div>
+        {chatArray.map((chat, index) => {
+          return (
+            <HomeChatBox key={index} box={chat.box} content={chat.content} />
+          );
+        })}
+        <div ref={chatEndRef}></div>
+        <div className={classes.toShare}>
+          <TextArea
+            onChange={onChangeHandler}
+            textAreaRef={textAreaRef}
+            textInput={textInput}
+          />
+          <Button
+            onClick={onSendHandler}
+            variant='contained'
+            endIcon={<SendIcon />}
+          >
+            Send
+          </Button>
         </div>
       </div>
     </div>

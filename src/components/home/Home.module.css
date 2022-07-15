@@ -41,12 +41,6 @@
     overflow-y: auto;
 }
 
-.chatBox {
-    position: relative;
-    text-align: left;
-    padding-bottom: 0;
-}
-
 .mainContent h1 {
     font-size: 1.25rem;
     font-weight: 400;
@@ -152,6 +146,25 @@
     }
 }
 
+@media (max-width: 1180px) {
+    .background .boxRight {
+        right: 450px
+    }
+
+    .mainContent h1 {
+        font-size: 1rem;
+        max-width: 200px;
+    }
+
+    .boxLeft {
+        margin-left: 30px;
+    }
+
+    .boxRight {
+        margin-right: 30px;
+    }
+}
+
 @media (max-width: 820px) {
     .background {
         width: 100%;
@@ -191,5 +204,10 @@
 
     .toShare {
         width: fit-content;
+    }
+
+    .mainContent h1 {
+        font-size: 1rem;
+        max-width: 200px;
     }
 }
