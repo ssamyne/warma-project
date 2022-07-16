@@ -1,10 +1,7 @@
 import { Reducer, useReducer } from 'react';
 import LanguageContext from './language-context';
-import HOME_DEFAULT_CHAT, {
-  HOME_TH_CHAT,
-  Chat,
-} from '../components/home/HOME_DEFAULT_CHAT';
-import REPLY_TEXT, { REPLY_TH } from '../components/home/REPLY_TEXT';
+import HOME_DEFAULT_CHAT, { HOME_TH_CHAT, Chat } from './HOME_DEFAULT_CHAT';
+import REPLY_TEXT, { REPLY_TH } from './REPLY_TEXT';
 
 const defaultLanguageState = { home: HOME_DEFAULT_CHAT, reply: REPLY_TEXT };
 

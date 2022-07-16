@@ -1,4 +1,4 @@
-import classes from './Home.module.css';
+import classes from '../components/home/Home.module.css';
 
 export interface Chat {
   box: string;

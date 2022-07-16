@@ -3,7 +3,7 @@ import useScrollToBottom from '../../hooks/useScrollToBottom';
 import useAutosizeTextArea from '../../hooks/useAutoSizeTextArea';
 import useHttp, { defaultStatus } from '../../hooks/useHttp';
 import { addContext } from '../../lib/api';
-import { Chat } from './HOME_DEFAULT_CHAT';
+import { Chat } from '../../store/HOME_DEFAULT_CHAT';
 import LanguageContext from '../../store/language-context';
 
 import classes from './Home.module.css';
@@ -18,7 +18,6 @@ const Home = React.memo(() => {
   const homeLanguage = homeCtx.language.home;
   const replyChat = homeCtx.language.reply;
   const [chatArray, setChatArray] = useState<Chat[]>([]);
-  const [isReply, setIsReply] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const [textInput, setTextInput] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
