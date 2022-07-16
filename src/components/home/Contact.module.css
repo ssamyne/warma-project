@@ -75,11 +75,38 @@
 }
 
 @media (max-width: 414px) {
+    .contact {
+        height: 110px;
+    }
+
+    .halfContact {
+        width: auto;
+        padding: 0;
+    }
+
+    .social {
+        padding: 0 20px;
+    }
+
+    .social h2 {
+        padding-top: 20px;
+        font-size: 1rem;
+    }
+
     .social svg {
         height: 20px;
     }
 
+    .row {
+        padding: 10px 0;
+        margin: 0;
+    }
+
     .row svg {
         height: 20px;
+    }
+
+    .row p {
+        font-size: 1rem;
     }
 }

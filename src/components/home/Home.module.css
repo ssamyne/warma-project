@@ -204,6 +204,7 @@
 
     .toShare {
         width: fit-content;
+        bottom: 110px;
     }
 
     .mainContent h1 {
