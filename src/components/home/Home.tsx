@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import useScrollToBottom from '../../hooks/useScrollToBottom';
 import useAutosizeTextArea from '../../hooks/useAutoSizeTextArea';
 import useHttp, { defaultStatus } from '../../hooks/useHttp';
 import { addContext } from '../../lib/api';
-import HOME_DEFAULT_CHAT from './HOME_DEFAULT_CHAT';
-import REPLY_TEXT from './REPLY_TEXT';
+import { Chat } from './HOME_DEFAULT_CHAT';
+import LanguageContext from '../../store/language-context';
 
 import classes from './Home.module.css';
 import TextArea from './TextArea';
@@ -14,7 +14,10 @@ import HomeChatBox from './HomeChatBox';
 import Contact from './Contact';
 
 const Home = React.memo(() => {
-  const [chatArray, setChatArray] = useState(HOME_DEFAULT_CHAT);
+  const homeCtx = useContext(LanguageContext);
+  const homeLanguage = homeCtx.language.home;
+  const replyChat = homeCtx.language.reply;
+  const [chatArray, setChatArray] = useState<Chat[]>([]);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const [textInput, setTextInput] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
@@ -44,8 +47,7 @@ const Home = React.memo(() => {
         ...chatArray,
         {
           box: classes.boxLeft,
-          content:
-            'I think something went wrong. Please try again after some time.',
+          content: replyChat[5],
         },
       ]);
     }
@@ -55,12 +57,12 @@ const Home = React.memo(() => {
         ...chatArray,
         {
           box: classes.boxLeft,
-          content: 'Thank you for sharing this with me.',
+          content: replyChat[3],
         },
       ]);
       setTextInput('');
     }
-  }, [status, setChatArray]);
+  }, [status]);
 
   const onSendHandler = () => {
     const inValidInput = textInput.trim() === '';
@@ -70,7 +72,7 @@ const Home = React.memo(() => {
 
       setChatArray([
         ...chatArray,
-        { box: classes.boxLeft, content: REPLY_TEXT[index] },
+        { box: classes.boxLeft, content: replyChat[index] },
       ]);
 
       setShowEmpty(true);
@@ -86,12 +88,17 @@ const Home = React.memo(() => {
       <div className={classes.background}>
         {showEmpty && (
           <div className={classes.boxRight}>
-            <h1>Hm ... Empty?</h1>
+            <h1>{replyChat[4]}</h1>
           </div>
         )}
         <Contact />
       </div>
       <div className={classes.mainContent}>
+        {homeLanguage.map((chat, index) => {
+          return (
+            <HomeChatBox key={index} box={chat.box} content={chat.content} />
+          );
+        })}
         {chatArray.map((chat, index) => {
           return (
             <HomeChatBox key={index} box={chat.box} content={chat.content} />

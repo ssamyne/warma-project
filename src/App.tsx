@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Card from './components/ui/Card';
 import Home from './components/home/Home';
+import LanguageProvider from './store/LanguageProvider';
 
 function App() {
   const notFoundPage = (
@@ -10,12 +11,14 @@ function App() {
     </div>
   );
   return (
-    <Card>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='*' element={notFoundPage} />
-      </Routes>
-    </Card>
+    <LanguageProvider>
+      <Card>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={notFoundPage} />
+        </Routes>
+      </Card>
+    </LanguageProvider>
   );
 }
 
