@@ -13,6 +13,7 @@ const useScrollToBottom = (
     if (!chatEndRef) {
       return;
     }
+    console.log(chatEndRef);
 
     chatEndRef.scrollIntoView({ behavior: 'smooth' });
   }, [chatEndRef, chatArray]);

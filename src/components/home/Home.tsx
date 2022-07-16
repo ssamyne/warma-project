@@ -18,6 +18,7 @@ const Home = React.memo(() => {
   const homeLanguage = homeCtx.language.home;
   const replyChat = homeCtx.language.reply;
   const [chatArray, setChatArray] = useState<Chat[]>([]);
+  const [isReply, setIsReply] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const [textInput, setTextInput] = useState('');
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
@@ -101,10 +102,13 @@ const Home = React.memo(() => {
         })}
         {chatArray.map((chat, index) => {
           return (
-            <HomeChatBox key={index} box={chat.box} content={chat.content} />
+            <div>
+              <HomeChatBox key={index} box={chat.box} content={chat.content} />
+              <div ref={chatEndRef}></div>
+            </div>
           );
         })}
-        <div ref={chatEndRef}></div>
+
         <div className={classes.toShare}>
           <TextArea
             onChange={onChangeHandler}
