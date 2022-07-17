@@ -101,8 +101,8 @@ const Home = React.memo(() => {
         })}
         {chatArray.map((chat, index) => {
           return (
-            <div>
-              <HomeChatBox key={index} box={chat.box} content={chat.content} />
+            <div key={index}>
+              <HomeChatBox box={chat.box} content={chat.content} />
               <div ref={chatEndRef}></div>
             </div>
           );

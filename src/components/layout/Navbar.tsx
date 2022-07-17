@@ -19,7 +19,9 @@ const Navbar = React.memo(() => {
   return (
     <div className={classes.navBar}>
       <div className={classes.navBrand}>
-        <NavLink to='/'>Warma</NavLink>
+        <NavLink reloadDocument to='/'>
+          Warma
+        </NavLink>
       </div>
       <div className={classes.navLang}>
         <button onClick={onClickHandler}>{currentLang}</button>
