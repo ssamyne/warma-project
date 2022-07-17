@@ -50,6 +50,7 @@ function useHttp(
   requestFunction: (requestData: string) => Promise<null>,
   startWithPending = false
 ) {
+
   const [httpState, dispatch] = useReducer(httpReducer, {
     status: startWithPending ? 'pending' : null,
     data: null,

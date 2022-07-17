@@ -1,10 +1,9 @@
-const FIREBASE_DOMAIN =
-  'https://warma-project-73375-default-rtdb.asia-southeast1.firebasedatabase.app/context.json';
+const API_DOMAIN = 'http://localhost:5555/context';
 
 export const addContext = async (context: string) => {
-  const response = await fetch(FIREBASE_DOMAIN, {
+  const response = await fetch(API_DOMAIN, {
     method: 'POST',
-    body: JSON.stringify(context),
+    body: JSON.stringify({ context }),
     headers: {
       'Content-Type': 'application/json',
     },
