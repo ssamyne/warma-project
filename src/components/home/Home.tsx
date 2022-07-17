@@ -107,7 +107,6 @@ const Home = React.memo(() => {
             </div>
           );
         })}
-
         <div className={classes.toShare}>
           <TextArea
             onChange={onChangeHandler}

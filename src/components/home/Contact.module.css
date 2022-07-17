@@ -7,25 +7,22 @@
     width: 100%;
     height: 140px;
     bottom: 0;
-}
-
-.halfContact {
-    display: flex;
-    width: 50%;
-    padding: 20px;
     flex-direction: column;
 }
 
 .social {
+    vertical-align: middle;
+    display: flex;
     text-align: center;
+    margin: auto;
 }
 
 .social h2 {
     color: #fff;
     font-size: 1.5rem;
     font-family: 'Edu VIC WA NT Beginner', cursive;
-    padding: 0;
-    margin: 0 auto 20px;
+    padding: 0 15px;
+    margin: auto;
 }
 
 .social svg {
@@ -54,8 +51,7 @@
 
 .row {
     display: flex;
-    width: 80%;
-    margin: auto auto 15px ;
+    margin: 0 auto auto; 
 }
 
 .row p {
@@ -79,29 +75,14 @@
         height: 110px;
     }
 
-    .halfContact {
-        width: auto;
-        padding: 0 10px 0;
-    }
-
-    .social {
-        padding: 0 20px;
-    }
-
     .social h2 {
-        padding-top: 20px;
         font-size: 1rem;
     }
 
     .social svg {
         height: 20px;
         padding: 0;
-        margin: 0 3px auto;
-    }
-
-    .row {
-        padding: 10px 0;
-        margin: 0;
+        margin: auto 3px auto;
     }
 
     .row svg {
@@ -113,7 +94,7 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 390px) {
     .halfContact {
         padding: 0 6px 0;
     }
