@@ -40,6 +40,7 @@ const Home = React.memo(() => {
         ...chatArray,
         { box: classes.boxRight, content: textInput },
       ]);
+      setTextInput('');
     }
 
     if (status === defaultStatus.error) {
@@ -60,7 +61,6 @@ const Home = React.memo(() => {
           content: replyChat[3],
         },
       ]);
-      setTextInput('');
     }
   }, [status]);
 
