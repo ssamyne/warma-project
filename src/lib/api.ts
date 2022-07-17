@@ -1,4 +1,4 @@
-const API_DOMAIN = 'http://localhost:5555/context';
+const API_DOMAIN = 'https://warma-api.herokuapp.com/context';
 
 export const addContext = async (context: string) => {
   const response = await fetch(API_DOMAIN, {
