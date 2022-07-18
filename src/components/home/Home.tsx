@@ -107,20 +107,20 @@ const Home = React.memo(() => {
             </div>
           );
         })}
-        <div className={classes.toShare}>
-          <TextArea
-            onChange={onChangeHandler}
-            textAreaRef={textAreaRef}
-            textInput={textInput}
-          />
-          <Button
-            onClick={onSendHandler}
-            variant='contained'
-            endIcon={<SendIcon />}
-          >
-            Send
-          </Button>
-        </div>
+      </div>
+      <div className={classes.toShare}>
+        <TextArea
+          onChange={onChangeHandler}
+          textAreaRef={textAreaRef}
+          textInput={textInput}
+        />
+        <Button
+          onClick={onSendHandler}
+          variant='contained'
+          endIcon={<SendIcon />}
+        >
+          Send
+        </Button>
       </div>
     </div>
   );

@@ -30,11 +30,11 @@
 
 .mainContent {
     position: fixed;
-    left: 0;
     background-attachment: fixed;
     background-color: rgba(224, 224, 224, 0.849);
     color: white;
     width: 40%;
+    left: 0;
     top: 60px;
     bottom: 66px;
     margin: 0;
@@ -106,18 +106,19 @@
 .toShare {
     position: fixed;
     display: flex;
-    background-color: #383838;
+    background-color: #2c2c2c;
     width: 40%;
     margin: 0;
     padding: 0;
     bottom: 0;
-    box-shadow: 0px -4px 6px 0px rgba(79, 79, 79, 0.45);
-    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 58.9%) -3px -3px 8px;
+    transform: translate3d(0, 0, 0);
+    -webkit-transforms: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
 }
 
 .toShare button {
     display: flex;
-    width: 20%;
     margin: auto 25px 15px 0;
     border-radius: 20px;
     background-color: #fff;
@@ -171,7 +172,6 @@
     .background {
         z-index: -1;
         width: 100%;
-        opacity: 0.9;
     }
 
     .background .boxRight {
@@ -184,6 +184,7 @@
         background-color: rgba(255, 255, 255, 0);
         bottom: 206px;
         top: 78px;
+        z-index: 1;
     }
 
     .mainContent h1 {
@@ -203,7 +204,6 @@
 
 @media (max-width: 414px) {
     .toShare {
-        width: fit-content;
         bottom: 110px;
     }
 
