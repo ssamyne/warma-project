@@ -5,6 +5,7 @@ const REPLY_TEXT = [
   'Thank you for sharing this with me.',
   'Hm ... Empty?',
   'I think something went wrong. Please try again after some time.',
+  'Backend sever is on maintenance.',
 ];
 export const REPLY_TH = [
   '...',
@@ -13,6 +14,7 @@ export const REPLY_TH = [
   'ขอบคุณสำหรับ ความคิดเห็นครับ',
   '... ไม่มีอะไรเลยแฮะ',
   'ตอนนี้เหมือนจะมีปัญหา บางอย่างโปรดลองใหม่ภายหลัง',
+  'ปรับปรุงระบบชั่วคราว',
 ];
 
 export default REPLY_TEXT;
