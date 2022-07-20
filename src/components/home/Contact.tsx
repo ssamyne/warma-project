@@ -3,6 +3,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Contact = () => {
   return (
@@ -29,6 +30,13 @@ const Contact = () => {
           rel='noreferrer'
         >
           <LinkedInIcon />
+        </a>
+        <a
+          href='https://github.com/ssamyne/warma-project.git'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <GitHubIcon />
         </a>
       </div>
       <div className={classes.row}>
